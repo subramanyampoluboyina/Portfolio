@@ -3,7 +3,7 @@
     text-decoration: none;
     font-size: larger;
     color: #FCF9EA;
-    font-family: "Montserrat", sans-serif;;
+    font-family: "Montserrat", sans-serif;
 
 }
 body{
@@ -12,8 +12,9 @@ body{
 .background-image{
     position: absolute;
     max-width: 100%;
+    height: fit-content;
     /* -webkit-mask-image: linear-gradient(black, transparent); */
-    mask-image: linear-gradient(black 35%, transparent);
+    mask-image: linear-gradient(black, black 20%, transparent 65%);
 }
 .logo{
     font-size: 3rem;
@@ -26,9 +27,10 @@ body{
     position: relative;
 }
 .navigation-section{
-    padding-left: 3rem;;
+    padding-left: 3rem;
+    margin:0px;
 }
-.about{
+.landing{
     margin-top: 15rem;
     text-align: center;
     position: relative;
@@ -44,7 +46,57 @@ body{
     width: 40%;
     justify-self: center;
 }
-main{
-    /* background-image: url("/header.jpg"); */
-    height: 500px;
+.about{
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 15rem;
+    margin: 0px;
 }
+.about-me-img{
+    text-align: end;
+    border-right: 2px solid black;
+    padding-right: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-content: center;
+}
+.about-me-description{
+    font-family: "Montserrat", sans-serif;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.about-me-description > h3{
+    font-weight: 700;
+}
+.about-me-description > p{
+    font-weight: 500;
+}
+.skills{
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 15rem;
+    margin: 0px;
+}
+.skills-img{
+    text-align: start;
+    border-left: 2px solid black;
+    padding-left: 2rem;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
+    align-content: center;
+}
+.all-skills{
+    padding-right: 1rem;
+    padding-left: 3rem;
+}
+.skills-icons{
+    width: fit-content;
+    height: fit-content;
+}
+
+
+/* .footer-section{
+    padding-top: 2rem;
+} */
