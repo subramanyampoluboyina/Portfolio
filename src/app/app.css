@@ -1,7 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 .nav-item{
     text-decoration: none;
+    font-size: larger;
+    color: #FCF9EA;
+    font-family: "Montserrat", sans-serif;
+
 }
 body{
     background-color: #F5F5F0;
 }
+.background-image{
+    position: absolute;
+    max-width: 100%;
+    height: fit-content;
+    /* -webkit-mask-image: linear-gradient(black, transparent); */
+    mask-image: linear-gradient(black, black 20%, transparent 65%);
+}
+.logo{
+    font-size: 3rem;
+    font-family: "Baloo Tamma 2", system-ui;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px #000000;
+}
+.header-section{
+    padding-top: 3rem;
+    position: relative;
+}
+.navigation-section{
+    padding-left: 3rem;
+    margin:0px;
+}
+.landing{
+    margin-top: 15rem;
+    text-align: center;
+    position: relative;
+}
+.name{
+    font-weight: 800;
+    font-size: 3.5rem;
+    font-family: "Baloo Tamma 2", system-ui;
+}
+.short-description{
+    font-weight: 600;
+    font-size: larger;
+    width: 40%;
+    justify-self: center;
+}
+.about{
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 15rem;
+    margin: 0px;
+}
+.about-me-img{
+    text-align: end;
+    border-right: 2px solid black;
+    padding-right: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-content: center;
+}
+.about-me-description{
+    font-family: "Montserrat", sans-serif;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.about-me-description > h3{
+    font-weight: 700;
+}
+.about-me-description > p{
+    font-weight: 500;
+}
+.skills{
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 15rem;
+    margin: 0px;
+}
+.skills-img{
+    text-align: start;
+    border-left: 2px solid black;
+    padding-left: 2rem;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
+    align-content: center;
+}
+.all-skills{
+    padding-right: 1rem;
+    padding-left: 3rem;
+}
+.skills-icons{
+    width: fit-content;
+    height: fit-content;
+}
+
+
+/* .footer-section{
+    padding-top: 2rem;
+} */
