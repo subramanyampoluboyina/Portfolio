@@ -1,102 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-.nav-item{
+
+.nav-item {
     text-decoration: none;
     font-size: larger;
     color: #FCF9EA;
     font-family: "Montserrat", sans-serif;
     /* font-size: large; */
 }
-body{
+
+body {
     background-color: #F5F5F0;
 }
-.background-image{
+
+.background-image {
     position: absolute;
     max-width: 100%;
     height: fit-content;
     /* -webkit-mask-image: linear-gradient(black, transparent); */
     mask-image: linear-gradient(black, black 20%, transparent 65%);
 }
-.logo{
+
+.logo {
     font-size: 3rem;
     font-family: "Baloo Tamma 2", system-ui;
     font-weight: 900;
     text-shadow: 2px 2px 4px #000000;
 }
-.header-section{
+
+.header-section {
     padding-top: 3rem;
     position: relative;
 }
-.navigation-section{
+
+.navigation-section {
     padding-left: 3rem;
-    margin:0px;
+    margin: 0px;
 }
-.landing{
+
+.landing {
     margin-top: 15rem;
+    margin-bottom: 4rem;
     text-align: center;
     position: relative;
 }
-.name{
+
+.name {
     font-weight: 800;
     font-size: 3.5rem;
     font-family: "Baloo Tamma 2", system-ui;
 }
-.short-description{
+
+.short-description {
     font-weight: 600;
     font-size: larger;
     width: 40%;
     justify-self: center;
 }
-.about{
-    padding-left: 2rem;
-    padding-right: 1rem;
-    padding-top: 15rem;
+
+.about {
+    padding: 10rem;
     margin: 0px;
 }
-.about-me-img{
-    text-align: end;
-    border-right: 2px solid black;
-    padding-right: 4rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    align-content: center;
+.about-me-description>h4 {
+    /* font-family: "Montserrat", sans-serif; */
+    font-weight: 600;
+    font-size: 2.2rem;
 }
-.about-me-description{
-    font-family: "Montserrat", sans-serif;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-.about-me-description > h3{
-    font-weight: 700;
-}
-.about-me-description > p{
+
+.about-me-description>p {
     font-weight: 500;
+    width: 85%;
+    font-size: 1.2rem;
+    justify-self: center;
 }
-.skills{
-    padding-left: 2rem;
-    padding-right: 1rem;
-    padding-top: 15rem;
+
+.skills {
+    padding: 10rem;
     margin: 0px;
 }
-.skills-img{
-    text-align: start;
-    border-left: 2px solid black;
-    padding-left: 2rem;
-    /* padding-top: 1rem;
-    padding-bottom: 1rem; */
+
+.skills-container {
+    width: 80%;
+    justify-self: center;
+    justify-content: space-around;
+}
+
+.skills-container>h4 {
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.skill {
+    margin: 1rem;
+    border-radius: 20px;
+    width: 8rem;
+    height: 8rem;
     align-content: center;
-}
-.all-skills{
-    padding-right: 1rem;
-    padding-left: 3rem;
-}
-.skills-icons{
-    width: fit-content;
-    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+.skill>img {
+    transition: width 1s, height 1s;
+}
 
-/* .footer-section{
-    padding-top: 2rem;
-} */
+.skill:hover {
+    img:not(.mySQLImg, .javaImg) {
+        height: 80px;
+        width: 80px;
+    }
+
+    .mySQLImg {
+        height: 65px;
+        width: 85px;
+    }
+
+    .javaImg {
+        height: 100px;
+        width: 100px;
+    }
+}
