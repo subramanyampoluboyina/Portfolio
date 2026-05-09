@@ -1,82 +1,211 @@
-<div class="portfolio">
-    <img class="background-image" src="./header.jpg" width="100%" alt="background-image">
-    <header class="header-section">
-        <nav class="row navigation-section">
-            <div class="logo col-lg-4 col-md-2 col-sm-2 col-2 justify-content-start">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-2">
-                    <!-- <span>S</span> -->
-                    <!-- <img src="favicon.png" height="40px" width="40px" alt="logo"> -->
-                </div>
-            </div>
-            <div class="navigation-link-section row col-lg-8 col-md-10 col-sm-10 col-10 justify-content-end">
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 align-content-center">
-                    <a href="#home" class="nav-item fw-medium">Home</a>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 align-content-center">
-                    <a href="#about" class="nav-item fw-medium">About</a>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 align-content-center">
-                    <a href="#skills" class="nav-item fw-medium">Skills</a>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 align-content-center">
-                    <a href="" class="nav-item fw-medium">Work</a>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3 align-content-center">
-                    <a href="" class="nav-item fw-medium">Contact</a>
-                </div>
-            </div>
+<div class="page-shell">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="topbar">
+        <a class="brand" href="#home">
+            <span class="brand-mark">SP</span>
+            <span class="brand-text">Subramanyam</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#credentials">Credentials</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-    <main>
-        <section class="landing" id="home">
-            <h1 class="name">Hi, I'm Subramanyam</h1>
-            <p class="short-description">A full stack developer experienced in building small scale to enterprise level
-                web applications.</p>
+
+    <main class="content-frame">
+        <section class="hero" id="home">
+            <div class="hero-copy panel">
+                <p class="eyebrow">.NET Full Stack Developer</p>
+                <h3>Engineering fast, reliable products for enterprise systems.</h3>
+                <p class="hero-summary">
+                    I am Subramanyam Poluboyina, a full stack developer with 3+ years of experience building
+                    ASP.NET Core and Angular applications, improving performance under concurrency, and shipping
+                    secure production-ready solutions.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="/SUBRAMANYAM_RESUME%20(1).pdf" target="_blank" rel="noreferrer">Open Resume</a>
+                    <a class="button button-secondary" href="#experience">See Experience</a>
+                </div>
+            </div>
+
+            <aside class="hero-rail">
+                <div class="identity-card panel">
+                    <p class="identity-role">Available for full stack roles</p>
+                    <h2>Subramanyam Poluboyina</h2>
+                    <p>Kadapa, Andhra Pradesh</p>
+                </div>
+                <div class="metrics-grid">
+                    <article class="metric-card panel">
+                        <span class="metric-value">3+</span>
+                        <span class="metric-label">Years of professional experience</span>
+                    </article>
+                    <article class="metric-card panel">
+                        <span class="metric-value">50+</span>
+                        <span class="metric-label">ASP.NET Core APIs delivered</span>
+                    </article>
+                    <article class="metric-card panel">
+                        <span class="metric-value">100+</span>
+                        <span class="metric-label">REST integrations implemented</span>
+                    </article>
+                </div>
+            </aside>
         </section>
-        <section class="row about" id="about">
-            <div class="col-5 about-me-img">
-                <img src="./about-me.png" alt="about-me">
+
+        <section class="section" id="about">
+            <div class="section-heading">
+                <p class="section-label">About</p>
+                <h2>Focused on software that stays stable under real business load.</h2>
             </div>
-            <div class="col-7 about-me-description">
-                <h3>About Me</h3>
-                <p>Hello, my name is Subramanyam. I’m a full stack developer experienced in both frontend and
-                    backend technologies. Currently, I work at Deloitte and previously contributed to enterprise
-                    project at DXC Technology.</p>
+            <div class="about-grid">
+                <article class="panel feature-card">
+                    <h3>What I work on</h3>
+                    <p>
+                        High-concurrency APIs, business workflow layers, monorepo collaboration, and realistic lower-environment data generation for performance testing.
+                    </p>
+                </article>
+                <article class="panel feature-card">
+                    <h3>How I build</h3>
+                    <p>
+                        With secure defaults, transactional consistency, modular Angular structure, and attention to production behavior instead of demo-only code paths.
+                    </p>
+                </article>
             </div>
         </section>
-        <section class="row skills" id="skills">
-            <div class="row col-9 all-skills">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center align-content-center">
-                    <img src="./angular-logo.png" width="150px" height="150px" alt="skill">
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center align-content-center">
-                    <img src="./dot-net-core.png" width="100px" height="100px" alt="skil">
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center align-content-center">
-                    <img src="./typescript.png" width="200px" height="120px" alt="skill">
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center align-content-center">
-                    <img src="./C_Sharp.png" width="100px" height="100px" alt="skill">
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center align-content-center">
-                    <img src="./MySQL.png" width="100px" height="70px" alt="skill">
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center align-content-center">
-                    <img src="./Java.png" width="70px" height="100px" alt="skill">
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center align-content-center">
-                    <img src="./HTML5.png" width="90px" height="90px" alt="skill">
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-3 text-center align-content-center">
-                    <img src="./CSS.png" width="80px" height="80px" alt="skill">
-                </div>
+
+        <section class="section" id="experience">
+            <div class="section-heading">
+                <p class="section-label">Experience</p>
+                <h2>Impact across backend, frontend, and performance-sensitive systems.</h2>
             </div>
-            <div class="col-3 skills-img">
-                <img src="./skills.png" width="170px" height="200px" alt="skils">
+            <div class="experience-stack">
+                <article class="timeline-item panel">
+                    <div class="timeline-meta">
+                        <div class="timeline-main">
+                            <p>Deloitte</p>
+                            <span>Analyst</span>
+                        </div>
+                        <div class="timeline-side">
+                            <strong>Hyderabad</strong>
+                            <strong>Oct 2025 - Present</strong>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Refactored synchronous APIs to asynchronous patterns, reducing peak-load timeouts by 50%.</li>
+                        <li>Optimized high-volume SQL stored procedures for stronger response times under concurrent traffic.</li>
+                        <li>Improved code sharing and deployment consistency through monorepo-based architecture work.</li>
+                        <li>Created workflow layers that reduced direct database manipulation and improved system integrity.</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-item panel">
+                    <div class="timeline-meta">
+                        <div class="timeline-main">
+                            <p>DXC Technology</p>
+                            <span>Analyst II Software Engineering</span>
+                        </div>
+                        <div class="timeline-side">
+                            <strong>Hyderabad</strong>
+                            <strong>Mar 2023 - Oct 2025</strong>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Engineered an SPA from 10+ user stories in collaboration with stakeholders.</li>
+                        <li>Architected modular Angular workspace applications for stronger reuse and maintainability.</li>
+                        <li>Built 50+ ASP.NET Core APIs and integrated 100+ REST APIs across enterprise workflows.</li>
+                        <li>Implemented JWT authorization, CAPTCHA login, and rate limiting for higher system reliability.</li>
+                        <li>Optimized reporting procedures that supported real-time Power BI dashboards.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="section-heading">
+                <p class="section-label">Skills</p>
+                <h2>Core stack, data tooling, and delivery workflow.</h2>
+            </div>
+            <div class="skills-layout">
+                <article class="panel skill-group accent-panel">
+                    <h3>Languages</h3>
+                    <div class="chip-list">
+                        <span>C#</span>
+                        <span>TypeScript</span>
+                        <span>JavaScript</span>
+                        <span>Java</span>
+                    </div>
+                </article>
+                <article class="panel skill-group">
+                    <h3>Frameworks</h3>
+                    <div class="chip-list">
+                        <span>ASP.NET Core</span>
+                        <span>Angular</span>
+                        <span>Angular Material</span>
+                    </div>
+                </article>
+                <article class="panel skill-group">
+                    <h3>Database</h3>
+                    <div class="chip-list">
+                        <span>MS SQL</span>
+                        <span>MySQL</span>
+                        <span>Stored Procedures</span>
+                        <span>Entity Framework</span>
+                    </div>
+                </article>
+                <article class="panel skill-group accent-panel">
+                    <h3>Tools</h3>
+                    <div class="chip-list">
+                        <span>Azure DevOps</span>
+                        <span>Jira</span>
+                        <span>Postman</span>
+                        <span>Power BI</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-split" id="credentials">
+            <div class="section-heading">
+                <p class="section-label">Credentials</p>
+                <h2>Education, certifications, and communication strengths.</h2>
+            </div>
+            <div class="credentials-grid">
+                <article class="panel credential-card">
+                    <h3>Education</h3>
+                    <p>Annamacharya Institute of Technology and Sciences, Rajampet</p>
+                    <span>B.Tech in Computer Science and Engineering · 2018 - 2022</span>
+                </article>
+                <article class="panel credential-card">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>AWS Certified Cloud Practitioner</li>
+                        <li>Microsoft Certified Azure Fundamentals (AZ-900)</li>
+                    </ul>
+                </article>
+                <article class="panel credential-card">
+                    <h3>Languages</h3>
+                    <p>Telugu (native) and English.</p>
+                    <h3 class="secondary-heading">Interests</h3>
+                    <p>Sports and continuous improvement in backend system design.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="contact-band panel">
+                <div>
+                    <p class="section-label">Contact</p>
+                    <h2>Open to engineering opportunities and serious product work.</h2>
+                </div>
+                <div class="contact-actions">
+                    <a href="tel:+916302455406">+91 6302455406</a>
+                    <a href="mailto:poluboyinasubramanyam69@gmail.com">poluboyinasubramanyam69@gmail.com</a>
+                    <p>Kadapa, Andhra Pradesh, 516150</p>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="footer-section">
-        <!-- <div></div> -->
-    </footer>
 </div>
