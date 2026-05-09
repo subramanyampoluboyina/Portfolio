@@ -164,7 +164,7 @@
 }
 
 .hero-copy h3 {
-    max-width: 16ch;
+    max-width: 26ch;
     font-size: clamp(2.3rem, 4.5vw, 3.2rem);
     margin-top: 0.75rem;
 }
@@ -226,23 +226,30 @@
 }
 
 .identity-card {
-    display: grid;
-    gap: 0.65rem;
+    display: flex;
+    align-items: center;
     padding: 1.5rem;
     background: linear-gradient(180deg, rgba(20, 25, 35, 0.94), rgba(12, 16, 24, 0.86));
 }
 
 .identity-role {
     margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
     color: var(--accent-strong);
-    font: 700 0.8rem/1.4 'Trebuchet MS', 'Segoe UI', sans-serif;
+    font: 700 0.88rem/1.4 'Trebuchet MS', 'Segoe UI', sans-serif;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
-.identity-card h2 {
-    margin: 0;
-    font: 700 1.7rem/1.1 var(--heading-font);
+.status-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #ff0000;
+    box-shadow: 0 0 0 green;
+    animation: status-pulse 1.6s ease-in-out infinite;
 }
 
 .identity-card p,
@@ -260,6 +267,23 @@
 .metric-label {
     font-weight: 500;
     color: var(--muted);
+}
+
+@keyframes status-pulse {
+    0% {
+        opacity: 0.8;
+        box-shadow: 0 0 0 0 rgba(104, 211, 200, 0.55);
+    }
+
+    70% {
+        opacity: 1;
+        box-shadow: 0 0 0 10px rgba(104, 211, 200, 0);
+    }
+
+    100% {
+        opacity: 0.8;
+        box-shadow: 0 0 0 0 rgba(104, 211, 200, 0);
+    }
 }
 
 .metrics-grid {
