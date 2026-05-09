@@ -7,13 +7,21 @@
             <span class="brand-mark">SP</span>
             <span class="brand-text">Subramanyam</span>
         </a>
-        <nav class="nav-links" aria-label="Primary navigation">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#credentials">Credentials</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="nav-shell">
+            <button class="nav-scroll-button nav-scroll-left" type="button" aria-label="Scroll navigation left" (click)="scrollNav('left')">
+                <span aria-hidden="true">&#8249;</span>
+            </button>
+            <nav class="nav-links" #navLinks aria-label="Primary navigation">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#credentials">Credentials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="nav-scroll-button nav-scroll-right" type="button" aria-label="Scroll navigation right" (click)="scrollNav('right')">
+                <span aria-hidden="true">&#8250;</span>
+            </button>
+        </div>
     </header>
 
     <main class="content-frame">

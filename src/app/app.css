@@ -99,11 +99,31 @@
     color: rgba(243, 246, 251, 0.88);
 }
 
+.nav-shell {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-width: 0;
+}
+
 .nav-links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.85rem;
     margin-right: 1rem;
+}
+
+.nav-scroll-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid rgba(155, 230, 223, 0.16);
+    border-radius: 999px;
+    background: rgba(19, 24, 34, 0.92);
+    color: var(--text);
+    font: 700 1rem/1 'Trebuchet MS', 'Segoe UI', sans-serif;
 }
 
 .nav-links a,
@@ -267,6 +287,7 @@
 .metric-label {
     font-weight: 500;
     color: var(--muted);
+    line-height: 1.35;
 }
 
 @keyframes status-pulse {
@@ -289,23 +310,28 @@
 .metrics-grid {
     display: grid;
     gap: 1rem;
+    grid-auto-rows: 1fr;
 }
 
 .metric-card {
     display: grid;
     gap: 0.45rem;
     padding: 1.25rem;
+    height: 100%;
     background: linear-gradient(180deg, rgba(19, 24, 34, 0.96), rgba(11, 14, 20, 0.85));
 }
 
 .metric-value {
     font: 700 clamp(2rem, 4vw, 3rem) var(--heading-font);
+    display: block;
+    line-height: 0.95;
 }
 
 .focus-card {
     display: grid;
     gap: 0.85rem;
     padding: 1.25rem;
+    height: 100%;
     background: linear-gradient(180deg, rgba(17, 23, 33, 0.96), rgba(10, 14, 20, 0.88));
 }
 
@@ -362,9 +388,12 @@
 }
 
 .education-line {
-    display: inline-block;
-    white-space: nowrap;
-    letter-spacing: 0.04em;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    letter-spacing: 0.01em;
+    overflow-wrap: anywhere;
     text-transform: none;
 }
 
@@ -488,17 +517,85 @@
     font: 500 1rem/1.7 'Trebuchet MS', 'Segoe UI', sans-serif;
 }
 
-@media (max-width: 960px) {
+@media (min-width: 1400px) {
+    .topbar,
+    .content-frame {
+        width: min(1200px, 100%);
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.85fr);
+    }
+
+    .education-line {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1199px) {
+    .topbar,
+    .content-frame {
+        width: min(1000px, 100%);
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
+        gap: 1.25rem;
+    }
+
+    .hero-copy {
+        padding: 2.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 991px) {
+    .page-shell {
+        padding: 1.25rem;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        border-radius: 1.5rem;
+        padding: 0.9rem 1rem;
+    }
+
+    .nav-links {
+        justify-content: flex-end;
+        row-gap: 0.5rem;
+        margin-right: 0;
+    }
+
     .hero,
     .about-grid,
-    .skills-layout,
-    .credentials-grid,
     .contact-band {
         grid-template-columns: 1fr;
     }
 
+    .hero {
+        padding: 3.75rem 0 2rem;
+    }
+
     .hero-copy {
-        padding: 2rem;
+        padding: 2.2rem;
+    }
+
+    .hero-rail,
+    .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+
+    .identity-card {
+        grid-column: 1 / -1;
+    }
+
+    .skills-layout,
+    .credentials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .section-heading h2,
@@ -520,30 +617,200 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-rail {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+    }
+
+    .metrics-grid {
+        display: contents;
+    }
+
+    .identity-card,
+    .metric-card,
+    .focus-card {
+        height: 100%;
+    }
+}
+
+@media (max-width: 767px) {
     .page-shell {
         padding: 1rem;
     }
 
+    .topbar,
+    .content-frame {
+        width: 100%;
+    }
+
     .topbar {
-        align-items: flex-start;
-        border-radius: 28px;
-        padding: 0.85rem;
+        gap: 0.85rem;
     }
 
-    .nav-links {
-        justify-content: flex-end;
-    }
-
-    .hero {
-        padding-top: 3rem;
-    }
-
-    .hero-copy h3 {
-        max-width: none;
+    .nav-shell {
+        width: 100%;
     }
 
     .brand-text {
         display: none;
+    }
+
+    .nav-links {
+        width: auto;
+        flex: 1 1 auto;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 0.65rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        margin-right: 0;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .nav-scroll-button {
+        display: inline-flex;
+        flex: 0 0 auto;
+    }
+
+    .hero {
+        padding: 3rem 0 1.75rem;
+    }
+
+    .hero-copy {
+        padding: 1.6rem;
+    }
+
+    .hero-copy h3 {
+        max-width: none;
+        font-size: clamp(1.95rem, 8vw, 2.6rem);
+    }
+
+    .hero-summary {
+        max-width: none;
+        font-size: 0.96rem;
+        line-height: 1.75;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .hero-rail,
+    .metrics-grid,
+    .skills-layout,
+    .credentials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-card {
+        gap: 0.25rem;
+    }
+
+    .panel,
+    .feature-card,
+    .skill-group,
+    .credential-card,
+    .timeline-item,
+    .contact-band {
+        border-radius: 1.35rem;
+    }
+
+    .contact-band,
+    .contact-band > div,
+    .contact-actions {
+        min-width: 0;
+    }
+
+    .contact-band h2 {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .chip-list span {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-actions a {
+        width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 479px) {
+    .topbar {
+        padding: 0.8rem;
+    }
+
+    .brand-mark {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+    .nav-scroll-button {
+        width: 1.85rem;
+        height: 1.85rem;
+    }
+
+    .hero-copy,
+    .identity-card,
+    .metric-card,
+    .focus-card,
+    .feature-card,
+    .skill-group,
+    .credential-card,
+    .timeline-item,
+    .contact-band {
+        padding: 1.2rem;
+    }
+
+    .hero-copy h3 {
+        font-size: clamp(1.75rem, 9vw, 2.2rem);
+    }
+
+    .section-heading h2,
+    .contact-band h2 {
+        font-size: 1.2rem;
+    }
+
+    .identity-role,
+    .focus-label,
+    .eyebrow,
+    .section-label {
+        letter-spacing: 0.08em;
+    }
+
+    .chip-list {
+        gap: 0.55rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .status-dot,
+    .button,
+    .nav-links a {
+        animation: none;
+        transition: none;
     }
 }
