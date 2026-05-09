@@ -1,121 +1,490 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-.nav-item {
-    text-decoration: none;
-    font-size: larger;
-    color: #FCF9EA;
-    font-family: "Montserrat", sans-serif;
-    /* font-size: large; */
+:host {
+    --page-bg: #08090d;
+    --surface: rgba(15, 19, 27, 0.78);
+    --surface-strong: rgba(20, 25, 35, 0.96);
+    --text: #f3f6fb;
+    --muted: #9ca9bf;
+    --accent: #68d3c8;
+    --accent-strong: #9be6df;
+    --border: rgba(155, 230, 223, 0.14);
+    --shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+    --heading-font: Cambria, 'Palatino Linotype', 'Book Antiqua', serif;
+    color: var(--text);
+    display: block;
 }
 
-body {
-    background-color: #F5F5F0;
+* {
+    box-sizing: border-box;
 }
 
-.background-image {
+.page-shell {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+    background:
+        radial-gradient(circle at top left, rgba(104, 211, 200, 0.18), transparent 24%),
+        radial-gradient(circle at 80% 10%, rgba(115, 82, 255, 0.16), transparent 22%),
+        linear-gradient(180deg, #0b0f16 0%, var(--page-bg) 48%, #07080c 100%);
+}
+
+.ambient {
     position: absolute;
-    max-width: 100%;
-    height: fit-content;
-    /* -webkit-mask-image: linear-gradient(black, transparent); */
-    mask-image: linear-gradient(black, black 20%, transparent 65%);
+    border-radius: 999px;
+    filter: blur(90px);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
-.logo {
-    font-size: 3rem;
-    font-family: "Baloo Tamma 2", system-ui;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px #000000;
+.ambient-one {
+    width: 18rem;
+    height: 18rem;
+    left: -5rem;
+    top: 5rem;
+    background: rgba(104, 211, 200, 0.18);
 }
 
-.header-section {
-    padding-top: 3rem;
+.ambient-two {
+    width: 24rem;
+    height: 24rem;
+    right: -6rem;
+    top: 16rem;
+    background: rgba(124, 99, 255, 0.22);
+}
+
+.topbar,
+.content-frame {
+    width: min(1080px, 100%);
+    margin: 0 auto;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    position: sticky;
+    top: 0.75rem;
+    z-index: 10;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(7, 10, 15, 0.76);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+.brand {
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text);
+    text-decoration: none;
+    font: 700 0.92rem 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(104, 211, 200, 0.28), rgba(124, 99, 255, 0.4));
+    border: 1px solid rgba(155, 230, 223, 0.18);
+}
+
+.brand-text {
+    color: rgba(243, 246, 251, 0.88);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-right: 1rem;
+}
+
+.nav-links a,
+.contact-band a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.nav-links a {
+    font: 500 0.88rem 'Trebuchet MS', 'Segoe UI', sans-serif;
+    color: rgba(243, 246, 251, 0.8);
+}
+
+.content-frame {
     position: relative;
+    z-index: 1;
 }
 
-.navigation-section {
-    padding-left: 3rem;
-    margin: 0px;
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+    gap: 1.5rem;
+    padding: 5rem 0 2.5rem;
+    align-items: stretch;
 }
 
-.landing {
-    margin-top: 15rem;
-    margin-bottom: 4rem;
-    text-align: center;
-    position: relative;
+.panel {
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow);
 }
 
-.name {
-    font-weight: 800;
-    font-size: 3.5rem;
-    font-family: "Baloo Tamma 2", system-ui;
+.hero-copy {
+    padding: 3rem;
+    background:
+        linear-gradient(135deg, rgba(11, 14, 21, 0.92), rgba(12, 18, 28, 0.72)),
+        url('/header.jpg') center/cover;
 }
 
-.short-description {
-    font-weight: 600;
-    font-size: larger;
-    width: 40%;
-    justify-self: center;
+.eyebrow,
+.section-label,
+.timeline-meta span,
+.credential-card span {
+    margin: 0;
+    color: var(--accent-strong);
+    font: 700 0.84rem/1.4 'Trebuchet MS', 'Segoe UI', sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
-.about {
-    padding: 10rem;
-    margin: 0px;
-}
-.about-me-description>h4 {
-    /* font-family: "Montserrat", sans-serif; */
-    font-weight: 600;
-    font-size: 2.2rem;
+.hero-copy h3,
+.section-heading h2 {
+    margin: 0;
+    font-family: var(--heading-font);
+    line-height: 1;
 }
 
-.about-me-description>p {
+.hero-copy h3 {
+    max-width: 16ch;
+    font-size: clamp(2.3rem, 4.5vw, 3.2rem);
+    margin-top: 0.75rem;
+}
+
+.hero-summary,
+.feature-card p,
+.timeline-item li,
+.credential-card p,
+.contact-card p {
+    color: var(--muted);
+    font: 500 1.02rem/1.8 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.hero-summary {
+    max-width: 58ch;
+    margin: 1.4rem 0 0;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 2rem;
+}
+
+.hero-rail {
+    display: grid;
+    gap: 1rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.2rem;
+    padding: 0.8rem 1.25rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font: 700 0.95rem 'Trebuchet MS', 'Segoe UI', sans-serif;
+    text-decoration: none;
+    transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.button:hover,
+.contact-card a:hover,
+.nav-links a:hover {
+    transform: translateY(-1px);
+}
+
+.button-primary {
+    background: linear-gradient(135deg, #7b63ff, #68d3c8);
+    color: #05070b;
+}
+
+.button-secondary {
+    border-color: rgba(155, 230, 223, 0.16);
+    background: rgba(19, 24, 34, 0.9);
+    color: var(--text);
+}
+
+.identity-card {
+    display: grid;
+    gap: 0.65rem;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, rgba(20, 25, 35, 0.94), rgba(12, 16, 24, 0.86));
+}
+
+.identity-role {
+    margin: 0;
+    color: var(--accent-strong);
+    font: 700 0.8rem/1.4 'Trebuchet MS', 'Segoe UI', sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.identity-card h2 {
+    margin: 0;
+    font: 700 1.7rem/1.1 var(--heading-font);
+}
+
+.identity-card p,
+.metric-label,
+.timeline-meta p,
+.feature-card h3,
+.skill-group h3,
+.credential-card h3,
+.secondary-heading {
+    margin: 0;
+    font: 500 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.identity-card p,
+.metric-label {
     font-weight: 500;
-    width: 85%;
-    font-size: 1.2rem;
-    justify-self: center;
+    color: var(--muted);
 }
 
-.skills {
-    padding: 10rem;
-    margin: 0px;
+.metrics-grid {
+    display: grid;
+    gap: 1rem;
 }
 
-.skills-container {
-    width: 80%;
-    justify-self: center;
-    justify-content: space-around;
+.metric-card {
+    display: grid;
+    gap: 0.45rem;
+    padding: 1.25rem;
+    background: linear-gradient(180deg, rgba(19, 24, 34, 0.96), rgba(11, 14, 20, 0.85));
 }
 
-.skills-container>h4 {
-    font-weight: 600;
-    font-size: 2.2rem;
+.metric-value {
+    font: 700 clamp(2rem, 4vw, 3rem) var(--heading-font);
 }
 
-.skill {
-    margin: 1rem;
-    border-radius: 20px;
-    width: 8rem;
-    height: 8rem;
-    align-content: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+.section {
+    padding: 1.5rem 0 0;
 }
 
-.skill>img {
-    transition: width 1s, height 1s;
+.section-heading {
+    max-width: none;
+    margin-bottom: 1.5rem;
 }
 
-.skill:hover {
-    img:not(.mySQLImg, .javaImg) {
-        height: 80px;
-        width: 80px;
+.section-heading h2 {
+    margin-top: 0.45rem;
+    font-size: clamp(1.35rem, 2vw, 1.9rem);
+    line-height: 1.12;
+}
+
+.contact-band h2 {
+    margin: 0.45rem 0 0;
+    font-family: var(--heading-font);
+    font-size: clamp(1.35rem, 2vw, 1.9rem);
+    line-height: 1.12;
+    max-width: 50ch;
+    white-space: normal;
+}
+
+@media (min-width: 961px) {
+    .section-heading h2,
+    .contact-band h2 {
+        white-space: nowrap;
     }
 
-    .mySQLImg {
-        height: 65px;
-        width: 85px;
+    .contact-band h2 {
+        white-space: normal;
+    }
+}
+
+.about-grid,
+.skills-layout,
+.credentials-grid,
+.experience-stack {
+    display: grid;
+    gap: 1rem;
+}
+
+.about-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+}
+
+.skills-layout,
+.credentials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.feature-card,
+.skill-group,
+.credential-card,
+.timeline-item,
+.contact-band {
+    padding: 1.5rem;
+}
+
+.timeline-item {
+    display: grid;
+    gap: 1rem;
+    background: linear-gradient(180deg, rgba(16, 21, 30, 0.96), rgba(10, 13, 18, 0.86));
+}
+
+.timeline-item ul,
+.credential-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.timeline-item li + li,
+.credential-card li + li {
+    margin-top: 0.5rem;
+}
+
+.timeline-meta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem 1rem;
+    align-items: start;
+}
+
+.timeline-main {
+    display: grid;
+    gap: 0.3rem;
+}
+
+.timeline-side {
+    display: grid;
+    gap: 0.2rem;
+    justify-items: end;
+    text-align: right;
+}
+
+.timeline-meta strong {
+    color: var(--accent-strong);
+    font: 700 0.92rem/1.4 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.chip-list span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.4rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(104, 211, 200, 0.08);
+    border: 1px solid rgba(155, 230, 223, 0.12);
+    font: 500 0.95rem 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.accent-panel {
+    background: linear-gradient(180deg, rgba(18, 25, 35, 0.96), rgba(14, 18, 25, 0.9));
+}
+
+.secondary-heading {
+    margin-top: 1.2rem;
+}
+
+.credential-card ul {
+    margin-top: 0.75rem;
+}
+
+.contact-band {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.9fr);
+    gap: 1.5rem;
+    align-items: start;
+    background: linear-gradient(135deg, rgba(17, 22, 31, 0.96), rgba(12, 15, 24, 0.92));
+}
+
+.contact-actions {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.contact-actions a {
+    width: fit-content;
+    font: 700 1.1rem/1.4 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.contact-actions p {
+    margin: 0;
+    color: var(--muted);
+    font: 500 1rem/1.7 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+@media (max-width: 960px) {
+    .hero,
+    .about-grid,
+    .skills-layout,
+    .credentials-grid,
+    .contact-band {
+        grid-template-columns: 1fr;
     }
 
-    .javaImg {
-        height: 100px;
-        width: 100px;
+    .hero-copy {
+        padding: 2rem;
+    }
+
+    .section-heading h2,
+    .contact-band h2 {
+        white-space: normal;
+    }
+
+    .timeline-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-side {
+        justify-items: start;
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-shell {
+        padding: 1rem;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        border-radius: 28px;
+        padding: 0.85rem;
+    }
+
+    .nav-links {
+        justify-content: flex-end;
+    }
+
+    .hero {
+        padding-top: 3rem;
+    }
+
+    .hero-copy h3 {
+        max-width: none;
+    }
+
+    .brand-text {
+        display: none;
     }
 }
